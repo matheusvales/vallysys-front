@@ -1,0 +1,55 @@
+<dx-button text="Limpar filtros" (onClick)="refresh()"></dx-button>
+<dx-data-grid [dataSource]="produtos"
+              (onRowRemoved)="onProdutoRowRemoved($event)"
+              (onRowUpdated)="onProdutoRowEditing($event)"
+              (onRowInserting)="insertRow($event)"
+              (onRowInserted)="onRowInserted($event)"
+              [showBorders]="true"
+              [showRowLines]="true">
+
+    <dxo-filter-row [visible]="true"></dxo-filter-row>
+    <dxo-editing
+
+            mode="popup"
+            [allowUpdating]="true"
+            [allowAdding]="true"
+            [allowDeleting]="true"
+            [useIcons]="true">;;
+        <dxo-popup
+                title="Produto"
+                [showTitle]="true"
+                [width]="700"
+                [height]="525"
+
+
+        >
+        </dxo-popup>
+        <dxo-form>
+            <dxi-item itemType="group" [colCount]="2" [colSpan]="2">
+                <dxi-item dataField="nome"></dxi-item>
+                <dxi-item dataField="codigo_interno"></dxi-item>
+                <dxi-item  dataField="concorrente" ></dxi-item>
+                <dxi-item dataField="situacao" ></dxi-item>
+                <dxi-item  dataField="categoria"></dxi-item>
+            </dxi-item>
+
+        </dxo-form>
+
+    </dxo-editing>
+
+    <dxi-column dataField="id" caption="Codigo" [width]="130"></dxi-column>
+    <dxi-column dataField="nome"></dxi-column>
+    <dxi-column dataField="codigo_interno" [width]="130"></dxi-column>
+    <dxi-column dataField="concorrente">
+        <dxo-lookup [dataSource]="concorrentes"></dxo-lookup>
+    </dxi-column>
+    <dxi-column dataField="situacao">
+        <dxo-lookup [dataSource]="situacoes"></dxo-lookup>
+    </dxi-column>
+    <dxi-column dataField="categoria" [visible]="false">
+        <dxo-lookup [dataSource]="categorias" displayExpr="descricao" ></dxo-lookup>
+    </dxi-column>
+    <dxi-column dataField="categoria.descricao"></dxi-column>
+
+</dx-data-grid>
+

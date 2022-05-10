@@ -1,0 +1,31 @@
+
+<mat-toolbar class="header" >
+   <span class="image_control">
+    <img src="assets/img/logo-menu.png" alt="" />
+  </span>
+    <span >
+        <img src="assets/img/logo-vallysys.png" alt=""/>
+    </span>
+         <a routerLink="" mat-list-item style="color: white">
+                <i class="material-icons" style="color: white">home</i>
+                Home
+            </a>
+    <span>
+       <mat-expansion-panel chass="cadastros">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Cadastros
+                    </mat-panel-title>
+                 </mat-expansion-panel-header>
+                <a routerLink="/categorias" mat-list-item >
+                    <p style="background-colorcolor: black"> Categorias</p>
+                </a>
+           <a routerLink="/produtos" mat-list-item>
+               <p style="background-colorcolor:black">Produtos</p>
+           </a>
+       </mat-expansion-panel>
+    </span>
+
+
+</mat-toolbar>
+<router-outlet></router-outlet>

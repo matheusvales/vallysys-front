@@ -1,0 +1,27 @@
+<dx-button text="Limpar filtros" ></dx-button>
+<dx-data-grid [dataSource]="formas_pagamento"
+              (onRowRemoved)="onProdutoRowRemoved($event)"
+              (onRowUpdated)="onProdutoRowEditing($event)"
+              (onRowInserting)="insertRow($event)"
+              (onRowInserted)="onRowInserted($event)"
+              [showBorders]="true"
+              [showRowLines]="true"
+
+>
+    <dxo-filter-row [visible]="true"></dxo-filter-row>
+    <dxo-editing
+            mode="popup"
+            [allowUpdating]="true"
+            [allowAdding]="true"
+            [allowDeleting]="true"
+            [useIcons]="true">
+    </dxo-editing>
+
+    <dxi-column dataField="id" caption="Codigo" [width]="130"></dxi-column>
+    <dxi-column dataField="codigo_interno" [width]="130"></dxi-column>
+    <dxi-column dataField="forma_pagamento"></dxi-column>
+    <dxi-column dataField="ativa">
+        <dxo-lookup [dataSource]="ativa"></dxo-lookup>
+    </dxi-column>
+
+</dx-data-grid>

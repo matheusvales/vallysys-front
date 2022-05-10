@@ -1,0 +1,24 @@
+.container {
+    height: 85%;
+    background-color: white;
+}
+
+i {
+    padding-right: .6rem;
+}
+
+.side {
+    width: 12%;
+    background-color: black;
+}
+
+mat-nav-list {
+
+}
+
+.nav {
+    width: 50%;
+}
+mat-expansion-panel{
+
+}

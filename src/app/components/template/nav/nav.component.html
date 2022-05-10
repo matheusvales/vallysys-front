@@ -1,0 +1,33 @@
+<mat-sidenav-container class="container">
+    <mat-sidenav class="side" mode="side" opened>
+        <mat-nav-list >
+            <a routerLink="" mat-list-item>
+                <i class="material-icons">home</i>
+                Home
+            </a>
+            <mat-expansion-panel >
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Cadastros
+                    </mat-panel-title>
+                    <mat-panel-description>
+
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <a routerLink="/categorias" >
+                    <p> Categorias</p>
+                </a>
+
+
+            </mat-expansion-panel>
+
+
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
